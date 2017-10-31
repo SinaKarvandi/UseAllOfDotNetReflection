@@ -1,0 +1,5 @@
+C:\Users\Sina\Desktop\UsePlugin\Plugin\bin\Debug\Plugin.dll
+C:\Users\Sina\Desktop\UsePlugin\Plugin\bin\Debug\Plugin.pdb
+C:\Users\Sina\Desktop\UsePlugin\Plugin\obj\Debug\Plugin.csprojResolveAssemblyReference.cache
+C:\Users\Sina\Desktop\UsePlugin\Plugin\obj\Debug\Plugin.dll
+C:\Users\Sina\Desktop\UsePlugin\Plugin\obj\Debug\Plugin.pdb
