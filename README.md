@@ -1,6 +1,7 @@
 # UseAllOfDotNetReflection
 This two simple methods make you use most of .Net Reflection
-Read full tutorial at : https://rayanfam.com/topics/get-everything-from-net-reflection-by-two-method/
+Read full tutorial at :
+https://rayanfam.com/topics/get-everything-from-net-reflection-by-two-method/
 
 
 I create two methods to cover all the possibilities in which a target function can be defined, the first one is for situations where you have a function that doesn’t need any argument.
