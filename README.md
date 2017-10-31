@@ -53,52 +53,7 @@ It implemented as below :
             return ret;
         }
 
-and the second one :
 
-
-object InvokeAssemblyWithArgumant(string Path, string MethodName, object[] argumantToMethod, object[] ArgumantsToContructor = null)
-{
-object ret = null;
-System.Reflection.Assembly myDllAssembly =
-System.Reflection.Assembly.LoadFile(Path);
-if (ArgumantsToContructor == null)
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item), argumantToMethod);
-}
-}
-else
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item, ArgumantsToContructor), argumantToMethod);
-}
-}
-return ret;
-}
-
-object InvokeAssemblyWithArgumant(string Path, string MethodName, object[] argumantToMethod, object[] ArgumantsToContructor = null)
-{
-object ret = null;
-System.Reflection.Assembly myDllAssembly =
-System.Reflection.Assembly.LoadFile(Path);
-if (ArgumantsToContructor == null)
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item), argumantToMethod);
-}
-}
-else
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item, ArgumantsToContructor), argumantToMethod);
-}
-}
-return ret;
-}
 The second one is used for situations where you wanna pass the parameter(s) to the function.
 
 For instance …
