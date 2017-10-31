@@ -7,50 +7,50 @@ I create two methods to cover all the possibilities in which a target function c
 
 It implemented as below :
 
-object InvokeAssemblyWithoutArgumant(string Path, string MethodName, object[] ArgumantsToContructor = null)
-{
-object ret = null;
-System.Reflection.Assembly myDllAssembly =
-System.Reflection.Assembly.LoadFile(Path);
-if (ArgumantsToContructor == null)
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item), null);
-}
-}
-else
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item, ArgumantsToContructor), null);
-}
-}
-return ret;
-}
+        static object InvokeAssemblyWithArgumant(string Path, string MethodName, object[] argumantToMethod, object[] ArgumantsToContructor = null)
+        {
+            object ret = null;
+            System.Reflection.Assembly myDllAssembly =
+            System.Reflection.Assembly.LoadFile(Path);
+            if (ArgumantsToContructor == null)
+            {
+                foreach (Type item in myDllAssembly.GetTypes())
+                {
+                    ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item), argumantToMethod);
+                }
+            }
+            else
+            {
+                foreach (Type item in myDllAssembly.GetTypes())
+                {
+                     ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item, ArgumantsToContructor), argumantToMethod);
+                }
+            }
+            return ret;
+        }
 
+        static object InvokeAssemblyWithoutArgumant(string Path, string MethodName, object[] ArgumantsToContructor = null)
+        {
+            object ret = null;
+            System.Reflection.Assembly myDllAssembly =
+            System.Reflection.Assembly.LoadFile(Path);
+            if (ArgumantsToContructor == null)
+            {
+                foreach (Type item in myDllAssembly.GetTypes())
+                {
+                    ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item), null);
+                }
+            }
+            else
+            {
+                foreach (Type item in myDllAssembly.GetTypes())
+                {
+                    ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item, ArgumantsToContructor), null);
+                }
+            }
+            return ret;
+        }
 
-object InvokeAssemblyWithoutArgumant(string Path, string MethodName, object[] ArgumantsToContructor = null)
-{
-object ret = null;
-System.Reflection.Assembly myDllAssembly =
-System.Reflection.Assembly.LoadFile(Path);
-if (ArgumantsToContructor == null)
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item), null);
-}
-}
-else
-{
-foreach (Type item in myDllAssembly.GetTypes())
-{
-ret = item.GetMethod(MethodName).Invoke(Activator.CreateInstance(item, ArgumantsToContructor), null);
-}
-}
-return ret;
-}
 and the second one :
 
 
